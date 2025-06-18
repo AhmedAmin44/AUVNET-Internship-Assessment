@@ -16,9 +16,12 @@ abstract class AppStrings {
           "Delivering to",
           bannerAlSatwa = "Al Satwa, 81A Street",
           hi = "Hi ",
-          Services = "Services",
-          Shortcuts = "Shortcuts",
-          PopularRestaurantsNearby = "Popular Restaurants Nearby";
+          services = "Services:",
+          shortcuts = "Shortcuts:",
+          popularRestaurantsNearby = "Popular restaurants nearby",
+          gotCode = "Got a code !",
+          gotCodeDescription ="Add your code and save on your\norder";
+
 }
 
 abstract class FireBaseStrings {
