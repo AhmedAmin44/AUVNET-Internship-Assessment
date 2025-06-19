@@ -24,7 +24,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        
         child: Column(
           children: [
             Expanded(
@@ -41,32 +40,50 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 },
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(16.w),
-              child: Column(
-                children: [
-                  CustomOnboardingBotton(
-                    onPressed: () {
-                      OnBoardingVisited();
-                      customNavigateReplacement(context, '/signUp');
-                    },
-                    text: AppStrings.getStarted,
-                  ),
-                  SizedBox(height: 12.h),
-                  TextButton(
-                    onPressed: () {
-                      pageController.jumpToPage(onBoardingData.length - 1);
-                      setState(() {
-                        currentIndex = onBoardingData.length - 1;
-                      });
-                    },
-                    child: Text(
-                      AppStrings.next,
-                      style: CustomTextStyles.RubikNormalstyle14,
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: RadialGradient(
+                  center: Alignment.bottomRight,
+                  radius: 1.19,
+                  colors: [
+                    Color(
+                      0xFF0EBE7E,
+                    ).withOpacity(0.01),
+                    Colors.white, 
+                  ],
+                  stops: [0.0, 0.85],
+                  tileMode: TileMode.clamp,
+                ),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(16.w),
+                child: Column(
+                  children: [
+                    SizedBox(height: 12.h),
+                    CustomOnboardingBotton(
+                      onPressed: () {
+                        OnBoardingVisited();
+                        customNavigateReplacement(context, '/signUp');
+                      },
+                      text: AppStrings.getStarted,
                     ),
-                  ),
-                  SizedBox(height: 42.h),
-                ],
+                    SizedBox(height: 12.h),
+                    TextButton(
+                      onPressed: () {
+                        pageController.jumpToPage(onBoardingData.length - 1);
+                        setState(() {
+                          currentIndex = onBoardingData.length - 1;
+                        });
+                      },
+                      child: Text(
+                        AppStrings.next,
+                        style: CustomTextStyles.RubikNormalstyle14,
+                      ),
+                    ),
+                    SizedBox(height: 42.h),
+                  ],
+                ),
               ),
             ),
           ],
